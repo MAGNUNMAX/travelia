@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <title>Travelia</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Al hacer clic en un enlace de navegación
+    $('.nav-link').click(function() {
+        // Remover la clase "active" de todos los enlaces
+        $('.nav-link').removeClass('active');
+        // Agregar la clase "active" al enlace clicado
+        $(this).addClass('active');
+    });
+
+    // Al desplazarse por la página
+    $(window).scroll(function() {
+        var scrollPos = $(document).scrollTop();
+        // Por cada sección de la página
+        $('section').each(function() {
+            var top = $(this).offset().top;
+            var bottom = top + $(this).outerHeight();
+            // Si la posición de desplazamiento está dentro de la sección
+            if (scrollPos >= top && scrollPos <= bottom) {
+                // Obtener el ID de la sección
+                var id = $(this).attr('id');
+                // Remover la clase "active" de todos los enlaces
+                $('.nav-link').removeClass('active');
+                // Agregar la clase "active" al enlace correspondiente al ID de la sección
+                $('.nav-link[href="#' + id + '"]').addClass('active');
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+
+</head>
+<body>
+    <!--header-->
+    <div id="home" class="container mb-0 pb-0">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 ">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img class="logo" src="./assets/image/travelia.jpg" alt="logo">
+            <span id="title" class="fs-4">Travelia</span>
+          </a>
+    
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#carouselExampleCaptions" class="nav-link ">Traveling</a></li>
+            <li class="nav-item"><a href="#featured-3" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#footer-nav" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#footer-nav" class="nav-link">About</a></li>
+          </ul>
+        </header>
+    </div>
+
+    <!--carusel-->
+
+        <div class="container pt-0 mt-0 gap-0">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/image/catedral.jpg" class="d-block w-100" alt="catedral">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5 id="h5">Visit the Old side of the city</h5>
+                    <p id="p">You will find some places like The Catedral</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/image/city.jpg" class="d-block w-100" alt="city">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5 id="h5">City is waiting for you</h5>
+                    <p id="p">Come and visit the city and discover it's wonders </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/image/cocotero.jpeg" class="d-block w-100" alt="cocotero">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5 id="h5">Enjoy the breeze</h5>
+                    <p id="p">Enjoy the sea and its wonderful view</p>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    <!--features-->
+
+
+    <div class="container px-4 py-5" id="featured-3">
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="./assets/icons/travel_icon.png" alt="travel" height="50px"><use xlink:href="#collection"></use>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Fly to your destiny</h3>
+            <p class="fst-italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum suscipit rem voluptatibus fugit quas consequuntur, error magnam! Quod iste, harum veniam voluptates delectus sapiente sit aperiam corrupti modi? Quis, itaque non. Reiciendis esse fuga adipisci? Eligendi vero eaque, alias expedita nulla rerum ipsa at magnam voluptatibus quis ut quia, vel fugiat? Minima tempore, veniam porro minus unde mollitia cumque sequi inventore cupiditate deserunt expedita vel laborum quibusdam numquam placeat distinctio. Ea illum eum accusamus tenetur sapiente libero? Cumque quasi optio voluptate, quae sit suscipit dignissimos? Nulla dolorum nam consectetur sint cum laborum iste et voluptatum. Minima officiis alias nihil nulla.</p>
+            <button type="buton" class="btn btn-secondary btn-outline-info"> call today</button>
+             
+              
+            
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="./assets/icons/map_icon.png" alt="map" height="50px"><use xlink:href="#people-circle"></use>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Plan your Trip</h3>
+            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsa nostrum, cum totam ex error eius nemo esse laudantium incidunt ut voluptas impedit illum perspiciatis architecto ratione aliquam reiciendis modi pariatur laboriosam, fugit fuga dolor mollitia labore. Optio dolorum voluptas aspernatur ab ullam commodi numquam nemo nisi repellat perspiciatis facere iusto asperiores assumenda dolorem beatae at, eum voluptatum ea esse perferendis et facilis. Quasi harum ut debitis quidem earum, saepe sequi nam eveniet illo delectus perspiciatis culpa. Sed, quasi modi excepturi ut illo itaque deserunt eaque quisquam delectus vitae. Mollitia, ullam dolore facere quos numquam eligendi dolorum! Nihil, architecto omnis?</p>
+            <button type="buton" class="btn btn-secondary btn-outline-info"> call today</button>
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+              <img src="./assets/icons/hotel_icon.jpg" alt="hotel" height="50px"><use xlink:href="#toggles2"></use>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">find your hotel</h3>
+            <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit animi libero et possimus nihil at repellat odit atque, molestiae perspiciatis fugiat sit autem doloremque officiis. Laborum eius temporibus culpa ipsum illo accusantium fugit mollitia explicabo saepe voluptatum cupiditate, repellat blanditiis nihil odio officiis corporis sunt atque nemo nulla aut quia? Inventore eos ab minus totam, quidem magni. Consequuntur enim reprehenderit mollitia aliquam ut cumque, reiciendis nesciunt fugiat distinctio omnis, hic asperiores soluta illo maiores iste molestiae exercitationem, tempore ullam porro deleniti. Ratione nostrum tempore aut, ea dolore vitae illum fugiat, necessitatibus dolores, molestiae quos ipsum soluta aliquam. Animi, a rem.</p>
+            <button type="buton" class="btn btn-secondary btn-outline-info"> call today</button>
+          </div>
+        </div>
+      </div>
+
+
+    <!--footers-->
+
+    <div class="footer">
+    <div class="container"> 
+        <footer id="footer-nav" class="py-3 my-4 fw-bold">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#home" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#carouselExampleCaptions" class="nav-link px-2 text-body-secondary">Traveling</a></li>
+            <li class="nav-item"><a href="#featured-3" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#footer-nav" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#footer-nav" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p  id="company" class="text-center fw-bold">© 2024 Company, Inc</p>
+        </footer>
+    </div> 
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    
+</body>
+</html>

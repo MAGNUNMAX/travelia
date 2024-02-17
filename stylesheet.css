@@ -1,0 +1,57 @@
+
+body{
+    background-image: url(./assets/image/water.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgb(189, 185, 181);
+}
+.container{
+    background:linear-gradient(rgb(196, 223, 77) 1%, rgb(77, 182, 77) 30%,rgb(87, 80, 80)) ;
+}
+
+
+/*#########    HEADER  ##########*/
+.logo{
+    height: 80px;
+    margin: 0px 20px 0px 0px;
+    padding: 0;
+    border-radius: 50%;
+
+}
+
+#title{
+    font-weight: bolder;
+}
+
+
+/*##########  CARUSEL  ########*/
+
+
+#h5, #p{
+    color:rgb(8, 8, 8);
+    text-shadow: 2px 2px 1px rgb(182, 137, 137);
+}
+
+ li{
+    color: black;
+ }
+
+ #company{
+    color:blue;
+
+ }
+
+ .container  .nav-link:hover{
+    transition: all 0.5s;
+    color: red !important;
+ 
+ }
+ 
+ .footer .nav-link:hover{
+    transition:  0.5s;
+    color: red !important;
+ }
+ .footer .nav-link:active{
+    color: blue !important;
+ }
